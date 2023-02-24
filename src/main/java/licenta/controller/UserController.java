@@ -27,10 +27,10 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<Boolean> register(@RequestBody UserDto user) {
+    public ResponseEntity<UserDto> register(@RequestBody UserDto user) {
         User mappedUser = mapper.userDtoToUserEntity(user);
-        service.register(mappedUser);
-        return ResponseEntity.ok(service.login(mappedUser));
+        User savedUser = service.register(mappedUser);
+        return ResponseEntity.ok(mapper.userEntityToUserDto(savedUser));
     }
 
     @GetMapping("")

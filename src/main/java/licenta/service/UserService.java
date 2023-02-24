@@ -23,7 +23,7 @@ public class UserService {
         userDao.save(user);
     }
 
-    public void register(User user) {
-        userDao.save(user);
+    public User register(User user) {
+        return userDao.save(user);
     }
 }
