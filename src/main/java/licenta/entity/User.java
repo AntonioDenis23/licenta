@@ -34,7 +34,7 @@ public class User {
     private String tel;
 
     @Column(name = "e_mail")
-    private String eMail;
+    private String mail;
 
     @ManyToMany
     private Set<Elections> elections;

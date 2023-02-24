@@ -17,5 +17,5 @@ public class UserDto {
 
     private String tel;
 
-    private String eMail;
+    private String mail;
 }

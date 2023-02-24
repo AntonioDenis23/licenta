@@ -31,6 +31,7 @@ public class UserController {
         User mappedUser = mapper.userDtoToUserEntity(user);
         User savedUser = service.register(mappedUser);
         return ResponseEntity.ok(mapper.userEntityToUserDto(savedUser));
+
     }
 
     @GetMapping("")
