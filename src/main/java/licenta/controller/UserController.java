@@ -6,6 +6,8 @@ import licenta.mapper.UserMapper;
 import licenta.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +31,14 @@ public class UserController {
         User mappedUser = mapper.userDtoToUserEntity(user);
         service.register(mappedUser);
         return ResponseEntity.ok(service.login(mappedUser));
+    }
+
+    @GetMapping("")
+    public ResponseEntity<UserDto> getUser(@PathVariable String userName) {
+        User user = service.findByUserName(userName);
+        UserDto userDto = mapper.userEntityToUserDto(user);
+        return ResponseEntity.ok(userDto);
+
     }
 
 }

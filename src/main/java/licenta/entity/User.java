@@ -24,9 +24,20 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "tel")
+    private String tel;
+
+    @Column(name = "e_mail")
+    private String eMail;
+
     @ManyToMany
     private Set<Elections> elections;
-
     public void addElection(Elections elections) {
         this.elections.add(elections);
     }
