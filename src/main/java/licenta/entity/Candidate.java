@@ -1,5 +1,6 @@
 package licenta.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -27,8 +28,10 @@ public class Candidate {
     @Column(name = "first_name")
     private String firstName;
 
-    @ManyToMany()
-    List<Elections> elections;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="election_id", nullable=false)
+    @JsonIgnore
+    Elections elections;
 
     public void increaseVotes(){
         votes+=1;
