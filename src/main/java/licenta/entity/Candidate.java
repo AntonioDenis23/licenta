@@ -22,10 +22,10 @@ public class Candidate {
     private int votes;
 
     @Column(name = "last_name")
-    private int lastName;
+    private String lastName;
 
     @Column(name = "first_name")
-    private int firstName;
+    private String firstName;
 
     @ManyToMany()
     List<Elections> elections;
