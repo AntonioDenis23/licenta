@@ -39,6 +39,7 @@ public class UserController {
     public ResponseEntity<UserDto> getUser(@RequestParam String userName) {
         User user = service.findByUserName(userName);
         UserDto userDto = mapper.userEntityToUserDto(user);
+        user.setPassword(null);
         return ResponseEntity.ok(userDto);
 
     }
