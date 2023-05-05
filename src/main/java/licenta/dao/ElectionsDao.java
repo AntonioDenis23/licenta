@@ -5,8 +5,6 @@ import licenta.entity.repo.ElectionsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 @Component
@@ -14,10 +12,11 @@ public class ElectionsDao {
     @Autowired
     ElectionsRepo electionsRepo;
 
-    public List<Elections> findAllElections(){
+    public List<Elections> findAllElections() {
         return (List<Elections>) electionsRepo.findAll();
     }
-    public Elections findElectionByName(String name){
-       return electionsRepo.findByName(name);
+
+    public Elections findElectionByName(String name) {
+        return electionsRepo.findByName(name);
     }
 }

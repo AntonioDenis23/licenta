@@ -16,6 +16,6 @@ public class ElectionsController {
 
     @GetMapping("/elections")
     public ResponseEntity<List<Elections>> getElections() {
-        return ResponseEntity.ok(service.findAllElections())s;
+        return ResponseEntity.ok(service.findAllElections());
     }
 }
