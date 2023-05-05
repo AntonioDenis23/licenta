@@ -30,6 +30,9 @@ public class User {
     @Column(name = "first_name")
     private String firstName;
 
+    @Column(name = "Last_name")
+    private String lastTName;
+
     @Column(name = "tel")
     private String tel;
 
