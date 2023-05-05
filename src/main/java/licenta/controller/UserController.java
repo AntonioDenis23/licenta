@@ -34,7 +34,7 @@ public class UserController {
 
     }
 
-    @GetMapping("")
+    @GetMapping("/user")
     public ResponseEntity<UserDto> getUser(@PathVariable String userName) {
         User user = service.findByUserName(userName);
         UserDto userDto = mapper.userEntityToUserDto(user);

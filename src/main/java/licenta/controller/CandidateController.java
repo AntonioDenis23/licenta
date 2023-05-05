@@ -21,7 +21,7 @@ public class CandidateController {
     private CandidateMapper candidateMapper;
 
     @GetMapping("/topics")
-    public ResponseEntity<List<CandidateDto>> login() {
+    public ResponseEntity<List<CandidateDto>> getTopics() {
         List<Candidate> candidates = service.findAllTopics();
         return ResponseEntity.ok(candidateMapper.CandidateEntityListToCandidateDtoList(candidates));
     }
