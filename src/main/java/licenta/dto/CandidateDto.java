@@ -13,7 +13,5 @@ public class CandidateDto {
 
     private String lastName;
 
-    private String lastName;
-
     private String firstName;
 }
