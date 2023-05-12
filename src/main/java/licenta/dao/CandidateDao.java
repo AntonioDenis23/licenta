@@ -25,4 +25,8 @@ public class CandidateDao {
 
         candidateRepo.delete(candidateRepo.findByLastName(candidateName));
     }
+
+    public Candidate findCandidate(Long id) {
+        return candidateRepo.findById(id).orElse(null);
+    }
 }

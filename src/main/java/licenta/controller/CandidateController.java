@@ -30,6 +30,11 @@ public class CandidateController {
         return ResponseEntity.ok(candidateMapper.CandidateEntityListToCandidateDtoList(candidates));
     }
 
+    @GetMapping("/candidate")
+    public ResponseEntity<CandidateDto> getCandidate(@RequestParam Long id) {
+        Candidate candidate = service.findCandidate(id);
+        return ResponseEntity.ok(candidateMapper.CandidateEntityToCandidateDto(candidate));
+    }
     @PostMapping("/addCandidate")
     public void addCandidate(@RequestBody CandidateDto candidateDto) {
         service.saveCandidate(candidateMapper.CandidateDtoToCandidateEntity(candidateDto));
