@@ -2,6 +2,7 @@ package licenta.controller;
 
 import licenta.dto.CandidateDto;
 import licenta.entity.Candidate;
+import licenta.mapper.CandidateMapImpl;
 import licenta.mapper.CandidateMapper;
 import licenta.service.CandidateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class CandidateController {
     private CandidateService service;
 
     @Autowired
-    private CandidateMapper candidateMapper;
+    private CandidateMapImpl candidateMapper;
 
     @GetMapping("/topics")
     public ResponseEntity<List<CandidateDto>> getTopics() {

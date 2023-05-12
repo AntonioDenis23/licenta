@@ -6,6 +6,8 @@ import javax.persistence.Column;
 
 @Data
 public class UserDto {
+    private Long id;
+
 
     private String userName;
 

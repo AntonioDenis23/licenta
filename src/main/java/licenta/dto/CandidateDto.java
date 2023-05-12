@@ -7,6 +7,8 @@ import javax.persistence.Column;
 @Data
 public class CandidateDto {
 
+    private Long id;
+
     private String name;
 
     private int votes;
@@ -18,5 +20,7 @@ public class CandidateDto {
     private String job;
 
     private String about;
+
+    private int electionId;
 
 }

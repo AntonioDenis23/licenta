@@ -23,7 +23,7 @@ public class Candidate {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "topic_name")
+    @Column(name = "candidate_name")
     private String name;
 
     @Column(name = "votes")

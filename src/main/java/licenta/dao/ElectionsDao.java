@@ -19,6 +19,9 @@ public class ElectionsDao {
     public Elections findElectionByName(String name) {
         return electionsRepo.findByName(name);
     }
+    public Elections findElectionById(int id) {
+        return electionsRepo.findById(Long.valueOf(id)).orElse(null);
+    }
 
     public Elections addElection(Elections elections) {
         return electionsRepo.save(elections);
