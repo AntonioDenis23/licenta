@@ -21,4 +21,8 @@ public class CandidateDao {
         candidateRepo.save(candidate);
     }
 
+    public void deleteCandidate(String candidateName) {
+
+        candidateRepo.delete(candidateRepo.findByLastName(candidateName));
+    }
 }

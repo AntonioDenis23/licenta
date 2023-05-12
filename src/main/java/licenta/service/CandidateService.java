@@ -19,4 +19,8 @@ public class CandidateService {
     public void saveCandidate(Candidate candidate) {
         candidateDao.saveCandidate(candidate);
     }
+
+    public void deleteCandidate(String candidateName) {
+        candidateDao.deleteCandidate(candidateName);
+    }
 }
