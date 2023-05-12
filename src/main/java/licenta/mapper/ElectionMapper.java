@@ -9,4 +9,7 @@ import org.mapstruct.Mapping;
 public interface ElectionMapper {
     @Mapping(target = "users",ignore = true)
     ElectionDto electionToElectionDto(Elections elections);
+
+    @Mapping(target = "users",ignore = true)
+    Elections electionDtoToElection(ElectionDto elections);
 }

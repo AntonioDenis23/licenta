@@ -29,5 +29,12 @@ public class ElectionsController {
     public ResponseEntity<ElectionDto> getElectionByName(@RequestParam String electionName) {
         return ResponseEntity.ok(mapper.electionToElectionDto(service.findElectionByName(electionName)));
     }
-
+    @GetMapping("/election")
+    public ResponseEntity<ElectionDto> addElection(@RequestParam ElectionDto election) {
+        return ResponseEntity.ok(mapper.electionToElectionDto(service.addElection(mapper.electionDtoToElection(election))));
+    }
+    @GetMapping("/election")
+    public ResponseEntity<ElectionDto> deleteElection(@RequestParam ElectionDto election) {
+        return ResponseEntity.ok(mapper.electionToElectionDto(service.deleteElection(mapper.electionDtoToElection(election))));
+    }
 }
