@@ -31,7 +31,7 @@ public class Elections {
     @Column(name = "elections_name")
     private String name;
 
-    @OneToMany(mappedBy="elections")
+    @ManyToMany(mappedBy="elections")
     List<Candidate> candidates;
 
     @ManyToMany

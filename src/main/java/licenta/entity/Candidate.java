@@ -28,10 +28,9 @@ public class Candidate {
     @Column(name = "first_name")
     private String firstName;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="election_id", nullable=false)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JsonIgnore
-    Elections elections;
+    List<Elections> elections;
 
     public void increaseVotes(){
         votes+=1;
