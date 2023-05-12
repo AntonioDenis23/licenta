@@ -8,6 +8,7 @@ import licenta.service.CandidateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,7 +32,7 @@ public class CandidateController {
     }
 
     @GetMapping("/candidate")
-    public ResponseEntity<CandidateDto> getCandidate(@RequestParam Long id) {
+    public ResponseEntity<CandidateDto> getCandidate(@PathVariable Long id) {
         Candidate candidate = service.findCandidate(id);
         return ResponseEntity.ok(candidateMapper.CandidateEntityToCandidateDto(candidate));
     }
