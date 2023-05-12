@@ -1,6 +1,8 @@
 package licenta.controller;
 
+import licenta.dto.ElectionDto;
 import licenta.entity.Elections;
+import licenta.mapper.ElectionMapper;
 import licenta.service.ElectionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,14 +17,17 @@ public class ElectionsController {
     @Autowired
     ElectionsService service;
 
+    @Autowired
+    ElectionMapper mapper;
+
     @GetMapping("/elections")
     public ResponseEntity<List<Elections>> getElections() {
         return ResponseEntity.ok(service.findAllElections());
     }
 
     @GetMapping("/election")
-    public ResponseEntity<Elections> getElectionByName(@RequestParam String electionName) {
-        return ResponseEntity.ok(service.findElectionByName(electionName));
+    public ResponseEntity<ElectionDto> getElectionByName(@RequestParam String electionName) {
+        return ResponseEntity.ok(mapper.electionToElectionDto(service.findElectionByName(electionName)));
     }
 
 }
