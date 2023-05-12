@@ -32,7 +32,7 @@ public class CandidateController {
     }
 
     @GetMapping("/candidate")
-    public ResponseEntity<CandidateDto> getCandidate(@PathVariable long id) {
+    public ResponseEntity<CandidateDto> getCandidate(@RequestParam long id) {
         Candidate candidate = service.findCandidate(id);
         return ResponseEntity.ok(candidateMapper.CandidateEntityToCandidateDto(candidate));
     }
