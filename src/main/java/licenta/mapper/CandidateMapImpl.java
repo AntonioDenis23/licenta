@@ -30,7 +30,6 @@ public class CandidateMapImpl  extends CandidateMapperImpl{
         CandidateDto candidateDto =   super.CandidateEntityToCandidateDto(candidate);
         if (candidate != null){
             candidateDto.setElectionDtos(electionMapper.electionListToElectionDtoList(candidate.getElections()));
-            System.out.println(candidate.getElections());
         }
         return candidateDto;
     }

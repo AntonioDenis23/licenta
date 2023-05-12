@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -44,7 +45,7 @@ public class Candidate {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JsonIgnore
-    List<Elections> elections;
+    List<Elections> elections = new ArrayList<>();
 
     public void increaseVotes() {
         votes += 1;
