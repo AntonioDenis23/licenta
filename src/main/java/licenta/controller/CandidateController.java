@@ -22,7 +22,7 @@ public class CandidateController {
 
     @GetMapping("/topics")
     public ResponseEntity<List<CandidateDto>> getTopics() {
-        List<Candidate> candidates = service.findAllTopics();
+        List<Candidate> candidates = service.findAllcadidates();
         return ResponseEntity.ok(candidateMapper.CandidateEntityListToCandidateDtoList(candidates));
     }
 

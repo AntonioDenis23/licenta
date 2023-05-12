@@ -13,7 +13,7 @@ public class CandidateDao {
     @Autowired
     CandidateRepo candidateRepo;
 
-    public List<Candidate> findAllTopics() {
+    public List<Candidate> findAllCandidates() {
         return (List<Candidate>) candidateRepo.findAll();
     }
 

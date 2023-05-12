@@ -12,8 +12,8 @@ public class CandidateService {
     @Autowired
     private CandidateDao candidateDao;
 
-    public List<Candidate> findAllTopics(){
-        return candidateDao.findAllTopics();
+    public List<Candidate> findAllcadidates(){
+        return candidateDao.findAllCandidates();
     }
 
     public void saveCandidate(Candidate candidate) {
