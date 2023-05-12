@@ -2,6 +2,7 @@ package licenta.mapper;
 
 import licenta.dao.ElectionsDao;
 import licenta.dto.CandidateDto;
+import licenta.dto.ElectionDto;
 import licenta.entity.Candidate;
 import licenta.entity.Elections;
 import licenta.entity.repo.ElectionsRepo;
@@ -26,12 +27,10 @@ public class CandidateMapImpl  extends CandidateMapperImpl{
         return candidate;
     }
     @Override
-    public CandidateDto CandidateEntityToCandidateDto ( Candidate candidate){
-        CandidateDto candidateDto =   super.CandidateEntityToCandidateDto(candidate);
-        if (candidate != null){
-            candidateDto.setElectionDtos(electionMapper.electionListToElectionDtoList(candidate.getElections()));
-        }
-        return candidateDto;
+    protected ElectionDto electionsToElectionDto(Elections elections) {
+        elections.setCandidates(null);
+        ElectionDto electionDto = super.electionsToElectionDto(elections);
+        return electionDto;
     }
 }
 
