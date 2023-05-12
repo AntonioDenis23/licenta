@@ -7,6 +7,8 @@ import licenta.service.ElectionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,11 +32,11 @@ public class ElectionsController {
         return ResponseEntity.ok(mapper.electionToElectionDto(service.findElectionByName(electionName)));
     }
     @GetMapping("/election")
-    public ResponseEntity<ElectionDto> addElection(@RequestParam ElectionDto election) {
+    public ResponseEntity<ElectionDto> addElection(@RequestBody ElectionDto election) {
         return ResponseEntity.ok(mapper.electionToElectionDto(service.addElection(mapper.electionDtoToElection(election))));
     }
-    @GetMapping("/election")
-    public void deleteElection(@RequestParam ElectionDto election) {
+    @PostMapping("/election")
+    public void deleteElection(@RequestBody ElectionDto election) {
         service.deleteElection(mapper.electionDtoToElection(election));
     }
 }
