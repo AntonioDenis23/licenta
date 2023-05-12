@@ -42,7 +42,7 @@ public class CandidateController {
     }
 
     @PostMapping("/deleteCandidate")
-    public void deleteCandidate(@RequestParam String candidateName) {
+    public void deleteCandidate(@PathVariable String candidateName) {
         service.deleteCandidate(candidateName);
     }
 }

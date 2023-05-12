@@ -36,7 +36,7 @@ public class UserController {
     }
 
     @GetMapping("/user")
-    public ResponseEntity<UserDto> getUser(@RequestParam String userName) {
+    public ResponseEntity<UserDto> getUser(@PathVariable String userName) {
         User user = service.findByUserName(userName);
         UserDto userDto = mapper.userEntityToUserDto(user);
         user.setPassword(null);
