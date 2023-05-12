@@ -20,4 +20,6 @@ public class UserDto {
     private String tel;
 
     private String mail;
+
+    private String role;
 }

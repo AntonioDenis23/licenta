@@ -2,6 +2,8 @@ package licenta.dto;
 
 import lombok.Data;
 
+import javax.persistence.Column;
+
 @Data
 public class CandidateDto {
 
@@ -9,4 +11,9 @@ public class CandidateDto {
 
     private int votes;
 
+    private String lastName;
+
+    private String lastName;
+
+    private String firstName;
 }
