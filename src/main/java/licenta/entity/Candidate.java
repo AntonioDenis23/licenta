@@ -24,9 +24,6 @@ public class Candidate {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "candidate_name")
-    private String name;
-
     @Column(name = "votes")
     private int votes;
 

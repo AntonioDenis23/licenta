@@ -29,8 +29,7 @@ public class CandidateMapImpl  extends CandidateMapperImpl{
     @Override
     protected ElectionDto electionsToElectionDto(Elections elections) {
         elections.setCandidates(null);
-        ElectionDto electionDto = super.electionsToElectionDto(elections);
-        return electionDto;
+        return super.electionsToElectionDto(elections);
     }
 }
 
