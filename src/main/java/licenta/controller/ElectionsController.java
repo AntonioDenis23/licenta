@@ -34,7 +34,7 @@ public class ElectionsController {
         return ResponseEntity.ok(mapper.electionToElectionDto(service.addElection(mapper.electionDtoToElection(election))));
     }
     @GetMapping("/election")
-    public ResponseEntity<ElectionDto> deleteElection(@RequestParam ElectionDto election) {
-        return ResponseEntity.ok(mapper.electionToElectionDto(service.deleteElection(mapper.electionDtoToElection(election))));
+    public void deleteElection(@RequestParam ElectionDto election) {
+        service.deleteElection(mapper.electionDtoToElection(election));
     }
 }

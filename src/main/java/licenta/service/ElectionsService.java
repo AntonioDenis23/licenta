@@ -22,7 +22,7 @@ public class ElectionsService {
         return dao.addElection(election);
     }
 
-    public Elections deleteElection(Elections electionDtoToElection) {
+    public void deleteElection(Elections electionDtoToElection) {
         dao.deleteElection(electionDtoToElection);
     }
 }

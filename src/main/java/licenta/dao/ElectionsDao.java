@@ -27,5 +27,6 @@ public class ElectionsDao {
     public void deleteElection(Elections elections) {
         Elections electionsTobeDeleted = findElectionByName(elections.getName());
         electionsRepo.delete(electionsTobeDeleted);
+
     }
 }
