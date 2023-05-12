@@ -39,6 +39,9 @@ public class User {
     @Column(name = "e_mail")
     private String mail;
 
+    @Column(name = "role")
+    private String role;
+
     @ManyToMany
     private Set<Elections> elections;
     public void addElection(Elections elections) {

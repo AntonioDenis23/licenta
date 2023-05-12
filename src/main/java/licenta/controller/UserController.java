@@ -41,7 +41,6 @@ public class UserController {
         UserDto userDto = mapper.userEntityToUserDto(user);
         user.setPassword(null);
         return ResponseEntity.ok(userDto);
-
     }
 
 }
