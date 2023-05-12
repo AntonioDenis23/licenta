@@ -31,11 +31,11 @@ public class ElectionsController {
     public ResponseEntity<ElectionDto> getElectionByName(@RequestParam String electionName) {
         return ResponseEntity.ok(mapper.electionToElectionDto(service.findElectionByName(electionName)));
     }
-    @GetMapping("/election")
+    @PostMapping("/addElection")
     public ResponseEntity<ElectionDto> addElection(@RequestBody ElectionDto election) {
         return ResponseEntity.ok(mapper.electionToElectionDto(service.addElection(mapper.electionDtoToElection(election))));
     }
-    @PostMapping("/election")
+    @PostMapping("/deleteElection")
     public void deleteElection(@RequestBody ElectionDto election) {
         service.deleteElection(mapper.electionDtoToElection(election));
     }
