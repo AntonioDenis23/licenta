@@ -14,4 +14,9 @@ public class CandidateDto {
     private String lastName;
 
     private String firstName;
+
+    private String job;
+
+    private String about;
+
 }
