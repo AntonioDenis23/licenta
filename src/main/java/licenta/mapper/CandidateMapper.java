@@ -10,7 +10,6 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface CandidateMapper {
 
-//    @Mapping(target = "elections",ignore = true)
     CandidateDto CandidateEntityToCandidateDto(Candidate entity);
 
     Candidate CandidateDtoToCandidateEntity(CandidateDto dto);

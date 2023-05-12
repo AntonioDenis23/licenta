@@ -29,7 +29,7 @@ public class ElectionsController {
     }
 
     @GetMapping("/election")
-    public ResponseEntity<ElectionDto> getElectionByName(@PathVariable String electionName) {
+    public ResponseEntity<ElectionDto> getElectionByName(@RequestParam String electionName) {
         return ResponseEntity.ok(mapper.electionToElectionDto(service.findElectionByName(electionName)));
     }
     @PostMapping("/addElection")

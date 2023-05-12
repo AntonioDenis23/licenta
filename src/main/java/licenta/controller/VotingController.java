@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Set;
@@ -31,7 +32,7 @@ public class VotingController {
     CandidateService candidateService;
 
     @PostMapping("vote/{userName}")
-    public ResponseEntity<String> vote(@PathVariable String userName, @RequestBody VoteDto voteDto) {
+    public ResponseEntity<String> vote(@RequestParam String userName, @RequestBody VoteDto voteDto) {
         Elections elections = electionsService.findElectionByName(voteDto.getElection());
 
         User user = userService.findByUserName(userName);

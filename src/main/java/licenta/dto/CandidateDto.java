@@ -1,8 +1,10 @@
 package licenta.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Column;
+import java.util.List;
 
 @Data
 public class CandidateDto {
@@ -21,6 +23,9 @@ public class CandidateDto {
 
     private String about;
 
+    private List<ElectionDto> electionDtos;
+
+    @JsonIgnore
     private int electionId;
 
 }
