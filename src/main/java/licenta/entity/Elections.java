@@ -31,7 +31,7 @@ public class Elections {
     @Column(name = "elections_name")
     private String name;
 
-    @ManyToMany(mappedBy="elections")
+    @ManyToMany(mappedBy="elections", fetch = FetchType.EAGER)
     List<Candidate> candidates;
 
     @ManyToMany

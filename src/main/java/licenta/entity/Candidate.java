@@ -42,7 +42,7 @@ public class Candidate {
     private String about;
 
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JsonIgnore
     List<Elections> elections;
 
