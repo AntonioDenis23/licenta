@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 200px auto 0;
+}
+.wrapper-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff !important;
+}
+
+.card-width {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 40rem;
+}
+
+body {
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+}
