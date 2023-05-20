@@ -32,7 +32,7 @@ public class VotingController {
 
     @PostMapping("vote/{userName}")
     public ResponseEntity<String> vote(@RequestParam String userName, @RequestBody VoteDto voteDto) {
-        Elections elections = electionsService.findElectionById(voteDto.getElection());
+        Elections elections = electionsService.findElectionById(voteDto.getElectionId());
 
         User user = userService.findByUserName(userName);
         Set<Elections> attendedElections = user.getElections();

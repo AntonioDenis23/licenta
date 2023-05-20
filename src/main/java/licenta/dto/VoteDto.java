@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class VoteDto {
 
-    private String election;
+    private long electionId;
     private String candidate;
 
 }

@@ -11,8 +11,6 @@ Z
 *src/main/java/licenta/dto/ElectionDto.java,5\4\5462371c953e55d29a2512dc5c553d12ec3795c4
 V
 &src/main/java/licenta/dto/UserDto.java,7\d\7d4e077e82ca076bad93d1a1e0c4964c75433e6b
-V
-&src/main/java/licenta/dto/VoteDto.java,9\1\910ef70d176578f0928f08f744af4c7270e884be
 \
 ,src/main/java/licenta/mapper/UserMapper.java,2\2\22d08ee79682ded82ec2ad5b88d6d66f71560f69
 d
