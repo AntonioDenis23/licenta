@@ -1,7 +1,6 @@
 package licenta.service;
 
 import licenta.dao.ElectionsDao;
-import licenta.dto.ElectionDto;
 import licenta.entity.Elections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -14,15 +13,16 @@ public class ElectionsService {
     private ElectionsDao dao;
 
     public List<Elections> findAllElections(){return dao.findAllElections();}
-    public Elections findElectionByName(String name){
-      return dao.findElectionByName(name);
+
+    public Elections findElectionById(long electionId){
+      return dao.findElectionById(electionId);
     }
 
     public Elections addElection(Elections election) {
         return dao.addElection(election);
     }
 
-    public void deleteElection(Elections electionDtoToElection) {
-        dao.deleteElection(electionDtoToElection);
+    public void deleteElection(long electionId) {
+        dao.deleteElection(electionId);
     }
 }

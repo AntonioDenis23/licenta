@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Objects;
 
 @Component
 public class CandidateDao {
@@ -21,9 +22,9 @@ public class CandidateDao {
         candidateRepo.save(candidate);
     }
 
-    public void deleteCandidate(String candidateName) {
+    public void deleteCandidate(long candidateid) {
 
-        candidateRepo.delete(candidateRepo.findByLastName(candidateName));
+        candidateRepo.delete(Objects.requireNonNull(candidateRepo.findById(candidateid).orElse(null)));
     }
 
     public Candidate findCandidate(Long id) {
