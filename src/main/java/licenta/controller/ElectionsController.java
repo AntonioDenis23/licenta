@@ -36,7 +36,7 @@ public class ElectionsController {
         return ResponseEntity.ok(mapper.electionToElectionDto(service.addElection(mapper.electionDtoToElection(election))));
     }
     @PostMapping("/deleteElection")
-    public void deleteElection(@RequestBody long electionId) {
+    public void deleteElection(@RequestParam long electionId) {
         service.deleteElection(electionId);
     }
 }
