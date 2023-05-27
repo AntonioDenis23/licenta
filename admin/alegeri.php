@@ -22,8 +22,8 @@
                      <td><?php echo $key; ?></td>
                      <td><?php echo $alegere->name; ?></td>
                      <td>
-                        <a href="<?= './edit-alegeri.php?id=' . $alegere->id ?>" class="btn btn-primary btn-sm">Edit</a>
-                        <button type='button' onclick='confirmFunctionAlegeri(<?= $alegere->id ?>)' class="btn btn-danger btn-sm">Delete</button>
+                        <a href="<?= './edit-alegeri.php?id=' . $alegere->id ?>" class="btn btn-primary btn-sm">Editeaza</a>
+                        <button type='button' onclick='confirmFunctionAlegeri(<?= $alegere->id ?>)' class="btn btn-danger btn-sm">Sterge</button>
                      </td>
                   </tr>
                <?php endforeach; ?>

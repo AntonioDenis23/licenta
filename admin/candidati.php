@@ -35,8 +35,8 @@
                      <td><?php echo $candidate->job; ?></td>
                      <td><?php echo $candidate->about; ?></td>
                      <td>
-                        <a href="<?= './edit-candidati.php?id=' . $candidate->id ?>" class="btn btn-primary btn-sm">Edit</a>
-                        <button type='button' onclick='confirmFunction(<?= $candidate->id ?>)' class="btn btn-danger btn-sm">Delete</button>
+                        <a href="<?= './edit-candidati.php?id=' . $candidate->id ?>" class="btn btn-primary btn-sm">Editeaza</a>
+                        <button type='button' onclick='confirmFunction(<?= $candidate->id ?>)' class="btn btn-danger btn-sm">Sterge</button>
                      </td>
                   </tr>
                <?php endforeach; ?>
