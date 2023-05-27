@@ -15,9 +15,5 @@ d
 4src/main/java/licenta/entity/repo/CandidateRepo.java,4\b\4b5f8af12455b89d50ef7496d2f66c589b7d17c6
 V
 &src/main/java/licenta/entity/User.java,e\c\ec65574503d34980c3134c5c8143c90c1042b26f
-d
-4src/main/java/licenta/controller/UserController.java,f\0\f0cb04978088a8a6808edc805b288b4d0b6e1b19
-[
-+src/main/java/licenta/entity/Elections.java,7\1\7115a88278e76fbf22c797906f7bfecd77f6d09c
 b
 2src/main/java/licenta/mapper/CandidateMapImpl.java,7\c\7c0f2392dee36cbd88e9e5a850563853f04fd62f

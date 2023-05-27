@@ -27,6 +27,7 @@ public class CandidateDao {
 
         Elections elections = electionsRepo.findById(candidate.getElectionId()).orElse(null);
         candidate.getElections().add(elections);
+        elections.getCandidates().add(candidate);
         candidateRepo.save(candidate);
     }
 
