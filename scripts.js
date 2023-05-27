@@ -73,14 +73,19 @@ async function submitFormRegister(event) {
       }),
     });
 
-    let resonseData = await resonse.json();
-    if (resonse.ok) {
+    const resonseData = await resonse;
+
+    if (resonse.status == 200) {
+      document.cookie = `username=${username}`;
       //Redirect
       window.location.replace(
         `pagina-cont-utilizator.php?username=${username}`
       );
+    } else if (resonse.status == 208) {
+      alert("Alege alt username");
+      //Redirect
     } else {
-      throw resonseData.error || "Something went wrong";
+      throw resonseData.error || "Ceva a mers prost";
     }
   } catch (error) {
     alert(error);

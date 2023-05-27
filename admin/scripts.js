@@ -5,6 +5,7 @@ async function submitFormAddCandidates(event) {
   let job = document.getElementById("job").value;
   let about = document.getElementById("about").value;
   let electionId = document.getElementById("electionId").value;
+  debugger;
   try {
     let resonse = await fetch("http://localhost:5050/addCandidate", {
       method: "POST",
