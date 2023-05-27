@@ -25,7 +25,6 @@ public class CandidateDto {
 
     private List<ElectionDto> electionDtos;
 
-    @JsonIgnore
     private long electionId;
 
 }
