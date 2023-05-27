@@ -30,7 +30,7 @@ public class VotingController {
     @Autowired
     CandidateService candidateService;
 
-    @PostMapping("vote/{userName}")
+    @PostMapping("vote")
     public ResponseEntity<String> vote(@RequestParam String userName, @RequestBody VoteDto voteDto) {
         Elections elections = electionsService.findElectionById(voteDto.getElectionId());
 
