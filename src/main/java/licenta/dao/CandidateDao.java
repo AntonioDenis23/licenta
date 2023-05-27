@@ -29,6 +29,7 @@ public class CandidateDao {
 
         Elections elections = electionsRepo.findById(candidate.getElectionId()).orElse(null);
         Set<Elections> electionsSet = new HashSet<>();
+        electionsSet.add(elections);
         candidate.setElections(electionsSet);
         candidateRepo.save(candidate);
     }
