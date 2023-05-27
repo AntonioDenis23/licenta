@@ -1,6 +1,7 @@
 package licenta.controller;
 
 
+import licenta.dto.MsgDto;
 import licenta.dto.VoteDto;
 import licenta.entity.Candidate;
 import licenta.entity.Elections;
@@ -31,25 +32,28 @@ public class VotingController {
     CandidateService candidateService;
 
     @PostMapping("vote")
-    public ResponseEntity<String> vote(@RequestParam String userName, @RequestBody VoteDto voteDto) {
+    public ResponseEntity<MsgDto> vote(@RequestParam String userName, @RequestBody VoteDto voteDto) {
         Elections elections = electionsService.findElectionById(voteDto.getElectionId());
 
         User user = userService.findByUserName(userName);
         Set<Elections> attendedElections = user.getElections();
-
+        MsgDto msg = new MsgDto();
         if (attendedElections.contains(elections)) {
-            return new ResponseEntity<>("Already Voted!!!!", HttpStatus.NOT_ACCEPTABLE);
+
+            msg.setMsg("Already Voted!!!!");
+            return new ResponseEntity<>(msg, HttpStatus.NOT_ACCEPTABLE);
         }
         user.addElection(elections);
         userService.saveUser(user);
         Candidate candidate = elections.getCandidates().stream().filter(c -> c.getId() == voteDto.getCandidateId()).findFirst().orElse(null);
         if (candidate == null) {
-            return new ResponseEntity<>("Vote Cancelled!!!!", HttpStatus.PARTIAL_CONTENT);
+            msg.setMsg("Vote Cancelled!!!!");
+            return new ResponseEntity<>(msg, HttpStatus.PARTIAL_CONTENT);
         }
         candidate.increaseVotes();
         candidateService.saveCandidate(candidate);
-
-        return ResponseEntity.ok("thank you for your vote");
+        msg.setMsg("Already Voted!!!!");
+        return ResponseEntity.ok(msg);
 
 
     }
