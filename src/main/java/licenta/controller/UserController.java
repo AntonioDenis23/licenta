@@ -5,6 +5,7 @@ import licenta.entity.User;
 import licenta.mapper.UserMapper;
 import licenta.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,7 +32,12 @@ public class UserController {
     public ResponseEntity<UserDto> register(@RequestBody UserDto user) {
         User mappedUser = mapper.userDtoToUserEntity(user);
         User savedUser = service.register(mappedUser);
-        return ResponseEntity.ok(mapper.userEntityToUserDto(savedUser));
+        HttpStatus status = HttpStatus.OK;
+        if(savedUser == null)
+        {
+            status = HttpStatus.ALREADY_REPORTED;
+        }
+        return new ResponseEntity<>(mapper.userEntityToUserDto(savedUser),status);
 
     }
 

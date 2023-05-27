@@ -23,7 +23,12 @@ public class UserService {
         userDao.save(user);
     }
 
-    public User register(User user) {
+    public User register(User user)
+    {
+        User existingUser = userDao.findByUserName(user.getUserName());
+        if(existingUser != null){
+            return null;
+        }
         return userDao.save(user);
     }
 }
