@@ -7,8 +7,10 @@ import licenta.entity.repo.ElectionsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Component
 public class CandidateDao {
@@ -26,9 +28,8 @@ public class CandidateDao {
     public void saveCandidate(Candidate candidate) {
 
         Elections elections = electionsRepo.findById(candidate.getElectionId()).orElse(null);
-        System.out.println("Elections "+ elections + "electionID"+ candidate.getElectionId());
-        candidate.getElections().add(elections);
-        System.out.println("candidate"+ candidate);
+        Set<Elections> electionsSet = new HashSet<>();
+        candidate.setElections(electionsSet);
         candidateRepo.save(candidate);
     }
 

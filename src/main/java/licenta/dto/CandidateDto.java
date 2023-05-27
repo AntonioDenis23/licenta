@@ -23,7 +23,7 @@ public class CandidateDto {
 
     private String about;
 
-    private List<ElectionDto> electionDtos;
+    private List<ElectionDto> electionDto;
 
     private long electionId;
 
