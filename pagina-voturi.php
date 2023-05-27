@@ -11,13 +11,17 @@ $alegeri = json_decode(file_get_contents($urlTopics, true));
 ?>
 <?php include_once('header.php'); ?>
 
-<div class="container card-width">
+<div style="background-color: #eeeeee;" class="container card-width">
   <div class="container mt-5 mb-5">
     <div class="row no-gutters">
+      <div>
+        <h1 style="font-size: 52px;" class="text-center font-weight-bold">Votanti</h1>
+      </div>
       <?php if (!empty($alegeri->candidates)) : ?>
         <?php foreach ($alegeri->candidates as $key => $value) : ?>
-          <form method="post" onsubmit="submitFormVote(event, <?= $value->id ?>, <?= $_GET['id'] ?>)">
-            <div class="col-md-6 col-lg-6">
+          <div class="col-md-6 col-lg-6">
+            <form method="post" onsubmit="submitFormVote(event, <?= $value->id ?>, <?= $_GET['id'] ?>)">
+
               <div style="position: relative;" class="card-width bg-navy">
                 <div class="  text-white">
                   <p>Nume: <span> <?= $value->firstName ?></span> </p>
@@ -32,12 +36,11 @@ $alegeri = json_decode(file_get_contents($urlTopics, true));
                   <p>Despre: <span> <?= $value->about ?></span> </p>
                 </div>
                 <div><button class="d-block m-auto btn voteaza-clasa">Voteaza</button></div>
-                <div class="continer-img">
-                  <img src="./poze/poza-vot.jpg" alt="">
-                </div>
+
               </div>
-            </div>
-          </form>
+            </form>
+
+          </div>
         <?php endforeach; ?>
       <?php else : ?>
         <div class="col-md-6 col-lg-6">

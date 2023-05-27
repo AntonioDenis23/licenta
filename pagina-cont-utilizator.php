@@ -12,38 +12,33 @@ $dataTopics = json_decode(file_get_contents($urlTopics, true));
 ?>
 <?php include_once('header.php'); ?>
 
-<div class="container card-width">
+<div class="container card-width" style="background-color: white;">
   <div class="container mt-5 mb-5">
     <div class="row no-gutters">
-      <div class="col-md-4 col-lg-4">
-        <div class="container-image">
-          <img src="https://i.imgur.com/aCwpF7V.jpg">
-        </div>
-      </div>
-      <div class="col-md-8 col-lg-8">
+      <div class="col-md-12 col-lg-12">
         <div class="d-flex flex-column ">
-          <p class="text-center h3 fw-bold mb-3 mx-1 mx-md-3 mt-3 text-secondary">Utilizator</p>
-          <div class="card-width bg-black">
-            <div class="p-1  text-white">
-              <h5>Username : <?= $dataUser->userName ?></h5>
+          <p class="text-center h3 fw-bold mb-3 mx-1 mx-md-3 mt-3 ">Utilizator</p>
+          <div class="card-width">
+            <div class="p-1 ">
+              <h5><span style="font-weight: 600;">Nume utilizator</span> : <?= $dataUser->userName ?></h5>
             </div>
-            <div class="p-1 bg-black text-white">
-              <h5>First Name: <?= $dataUser->firstName ?></h5>
+            <div class="p-1">
+              <h5><span style="font-weight: 600;">Prenume:</span> <?= $dataUser->lastTName ?></h5>
             </div>
-            <div class="p-1 bg-black text-white">
-              <h5>Last name: <?= $dataUser->firstName ?></h5>
+            <div class="p-1">
+              <h5><span style="font-weight: 600;">Nume:</span> <?= $dataUser->firstName ?></h5>
             </div>
-            <div class="p-1 bg-black text-white">
-              <h5>Your Email: <?= $dataUser->mail ?></h5>
+            <div class="p-1">
+              <h5><span style="font-weight: 600;">Email:</span> <?= $dataUser->mail ?></h5>
             </div>
-            <div class="p-1 bg-black text-white">
-              <h5>Phone Number: <?= $dataUser->tel ?></h5>
+            <div class="p-1">
+              <h5><span style="font-weight: 600;">Numar telefon:</span> <?= $dataUser->tel ?></h5>
             </div>
-            <div class="d-flex flex-row text-white ">
+            <div class="d-flex flex-row ">
               <?php foreach ($dataTopics as $key => $value) : ?>
                 <div class="container-topics-main ">
                   <div class="container-topic h-100">
-                    <div style="height:75px"><span>Pozitie: <?= $value->name ?></span></div>
+                    <div style="height:75px"><span> <?= $value->name ?></span></div>
                     <div class="mt-1 "><span><a class='btn btn-success' href="./pagina-voturi.php?id=<?= $value->id ?>" class="vote">Voteaza</a></span></div>
                   </div>
                 </div>
@@ -56,7 +51,7 @@ $dataTopics = json_decode(file_get_contents($urlTopics, true));
     </div>
   </div>
   <?php if ($dataUser->role == 'admin' && isset($dataUser)) : ?>
-    <div class="container d-block text-center">
+    <div class=" d-block text-center">
       <a href="./admin/view.php">
         <button type="button" class="btn btn-primary">Panou Admin</button>
       </a>
@@ -94,10 +89,6 @@ $dataTopics = json_decode(file_get_contents($urlTopics, true));
     color: #eeeeee;
   }
 
-  .bg-black {
-    background: #000;
-  }
-
   .skill-block {
     width: 30%;
   }
@@ -130,14 +121,14 @@ $dataTopics = json_decode(file_get_contents($urlTopics, true));
     width: 100%;
     text-align: center;
     row-gap: 10px;
-    background: #000;
+    /* background: #000; */
   }
 
   .container-topics-main span {
     padding: 10px;
     display: block;
     font-size: 16px;
-    font-weight: 500
+    font-weight: 700
   }
 
   .container-topics-main .container-topic {
@@ -154,7 +145,7 @@ $dataTopics = json_decode(file_get_contents($urlTopics, true));
   }
 
   .container-topics-main .container-topic:nth-child(odd) {
-    background-color: purple;
+    background-color: #71b1cb;
   }
 
   .container-topic:hover {

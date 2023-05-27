@@ -1,5 +1,5 @@
 <?php include_once('header.php'); ?>
-<section class="vh-90" style="background-color: #eee;">
+<section class="vh-90" style="background-color: #d2e8f1;">
     <div class="container h-100">
         <div class="m-3 row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-12 col-xl-11">

@@ -14,12 +14,7 @@ if (isset($_SESSION['id'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
-    <link href="styles.css" rel="stylesheet">
-    <style>
-        #navbarNav {
-            justify-content: end;
-        }
-    </style>
+    <link href="./styles.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,64 +25,61 @@ if (isset($_SESSION['id'])) {
     <?php
     $url =  $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
     ?>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light wrapper-header">
+    <nav class="navbar navbar-expand-lg navbar-light wrapper-header">
         <?php if (strpos($url, 'admin') !== false) : ?>
-            <ul class="navbar-nav">
+            <ul style="margin-left: 200px;" class="navbar-nav">
                 <img src="../poze/logo.png" alt="" height="50px" class="logo-image">
                 <li class="nav-item">
-                    <a class="nav-link" href="../about.php">About</a>
+                    <a class="nav-link" href="../about.php">Despre</a>
                 </li>
+                <li> <a class="nav-link" href="./termenii.php">Termenii si conditiile</a> </li>
             </ul>
         <?php else : ?>
             <img src="./poze/logo.png" alt="" height="50px" class="logo-image">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <ul class="navbar-nav">
-
                 <li class="nav-item">
-                    <a class="nav-link" href="./about.php">About</a>
+                    <a class="nav-link" href="./about.php">Despre</a>
                 </li>
+                <li> <a class="nav-link" href="./termenii.php">Termeni si conditii</a> </li>
+
             </ul>
         <?php endif ?>
 
         <?php
         if (!isset($_COOKIE['username'])) {
-            echo "
-            <div   id='navbarNav'>
+            echo "<div id='navbarNav'>
                 <ul class='navbar-nav' >
                     <li class='nav-item'>
-                        <a class='nav-link' href='register.php'>Register</a>
+                        <a class='nav-link' href='register.php'>Inregistrare</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='index.php'>Login</a>
+                        <a class='nav-link' href='index.php'>Logare</a>
                     </li>
                 </ul>
             </div>";
         } elseif (strpos($url, 'admin') !== false) {
-            echo "
-            <div class='collapse navbar-collapse' id='navbarNav'>
-        <ul  class='navbar-nav' >
-            <li class='nav-item'>
-                <a class='nav-link' href='../pagina-cont-utilizator.php?username=" . $_COOKIE['username']  . "'>Pagina utilizator</a>
-            </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='logout.php'>Logout</a>
-            </li>
-        </ul>
-            </div>";
+            echo "<div id='navbarNav'>
+                        <ul  class='navbar-nav' >
+                            <li class='nav-item'>
+                                <a class='nav-link' href='../pagina-cont-utilizator.php?username=" . $_COOKIE['username']  . "'>Pagina utilizator</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' href='../logout.php'>Delogare</a>
+                            </li>
+                        </ul>
+                    </div>";
         } else {
             echo "
-            <div  class='collapse navbar-collapse' id='navbarNav'>
-            <ul  class='navbar-nav' >
-            <li class='nav-item'>
-                <a class='nav-link' href='./pagina-cont-utilizator.php?username=" . $_COOKIE['username']  . "'>Pagina utilizator</a>
-            </li>
-            <li class='nav-item'>
-                <a class='nav-link' href='logout.php'>Logout</a>
-            </li>
-            </ul>
-            </div>";
+                    <div id='navbarNav'>
+                        <ul  class='navbar-nav' >
+                            <li class='nav-item'>
+                                <a class='nav-link' href='./pagina-cont-utilizator.php?username=" . $_COOKIE['username']  . "'>Pagina utilizator</a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' href='logout.php'>Delogare</a>
+                            </li>
+                        </ul>
+                    </div>";
         }
 
         ?>

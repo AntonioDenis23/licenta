@@ -26,9 +26,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #d2e8f1 !important;
 }
-.text-white > p {
+.form-group label {
   font-weight: 700;
-}
-.text-white span {
-  font-weight: 500;
+  margin-top: 10px;
 }
