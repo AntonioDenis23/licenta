@@ -52,7 +52,7 @@ public class VotingController {
         }
         candidate.increaseVotes();
         candidateService.saveCandidate(candidate);
-        msg.setMsg("Already Voted!!!!");
+        msg.setMsg("Voted Succesfully!!!!");
         return ResponseEntity.ok(msg);
 
 
