@@ -44,6 +44,7 @@ public class Candidate {
     @JsonIgnore
     List<Elections> elections = new ArrayList<>();
 
+    long electionId ;
     public void increaseVotes() {
         votes += 1;
     }

@@ -23,6 +23,7 @@ public class CandidateService {
     public void deleteCandidate(long candidateid) {
         candidateDao.deleteCandidate(candidateid);
     }
+
     public Candidate findCandidate(Long id){
        return candidateDao.findCandidate(id);
     }

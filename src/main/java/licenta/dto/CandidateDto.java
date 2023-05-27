@@ -26,6 +26,6 @@ public class CandidateDto {
     private List<ElectionDto> electionDtos;
 
     @JsonIgnore
-    private int electionId;
+    private long electionId;
 
 }
