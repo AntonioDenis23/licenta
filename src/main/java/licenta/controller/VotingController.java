@@ -42,7 +42,7 @@ public class VotingController {
         }
         user.addElection(elections);
         userService.saveUser(user);
-        Candidate candidate = elections.getCandidates().stream().filter(c -> c.getLastName().equals(voteDto.getCandidate())).findFirst().orElse(null);
+        Candidate candidate = elections.getCandidates().stream().filter(c -> c.getId() == voteDto.getCandidateId()).findFirst().orElse(null);
         if (candidate == null) {
             return new ResponseEntity<>("Vote Cancelled!!!!", HttpStatus.PARTIAL_CONTENT);
         }

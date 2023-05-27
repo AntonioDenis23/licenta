@@ -6,6 +6,6 @@ import lombok.Data;
 public class VoteDto {
 
     private long electionId;
-    private String candidate;
+    private long candidateId;
 
 }
