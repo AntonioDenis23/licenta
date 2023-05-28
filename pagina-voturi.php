@@ -15,7 +15,7 @@ $alegeri = json_decode(file_get_contents($urlTopics, true));
   <div class="container mt-5 mb-5">
     <div class="row no-gutters">
       <div>
-        <h1 style="font-size: 52px;" class="text-center font-weight-bold">Votanti</h1>
+        <h1 style="font-size: 52px;" class="text-center font-weight-bold">Votanți</h1>
       </div>
       <?php if (!empty($alegeri->candidates)) : ?>
         <?php foreach ($alegeri->candidates as $key => $value) : ?>
@@ -30,12 +30,12 @@ $alegeri = json_decode(file_get_contents($urlTopics, true));
                   <p>Prenume: <span> <?= $value->lastName ?></span> </p>
                 </div>
                 <div class=" text-white">
-                  <p>Ocupatie: <span> <?= $value->job ?></span></p>
+                  <p>Ocupație: <span> <?= $value->job ?></span></p>
                 </div>
                 <div class=" text-white">
                   <p>Despre: <span> <?= $value->about ?></span> </p>
                 </div>
-                <div><button class="d-block m-auto btn voteaza-clasa">Voteaza</button></div>
+                <div><button class="d-block m-auto btn voteaza-clasa">Votează</button></div>
 
               </div>
             </form>
@@ -44,7 +44,7 @@ $alegeri = json_decode(file_get_contents($urlTopics, true));
         <?php endforeach; ?>
       <?php else : ?>
         <div class="col-md-6 col-lg-6">
-          <p>Ai 0 candidati</p>
+          <p>Ai 0 candidați</p>
         </div>
       <?php endif ?>
     </div>
@@ -73,7 +73,7 @@ $alegeri = json_decode(file_get_contents($urlTopics, true));
         window.location.replace(`pagina-cont-utilizator.php?username=${userName}`);
       }
       if (responseData.status == 406) {
-        alert('Deja ai votat, alege alta pozitie pentru a vota')
+        alert('Deja ai votat, alege alta poziție pentru a vota')
         window.location.replace(`pagina-cont-utilizator.php?username=${userName}`);
       }
     } catch (error) {

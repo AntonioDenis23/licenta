@@ -23,7 +23,7 @@ async function submitForm(event) {
         `pagina-cont-utilizator.php?username=${username}`
       );
     } else {
-      throw resonseData.error || "Nume sau parola gresite";
+      throw resonseData.error || "Nume sau parolă gresite";
     }
   } catch (error) {
     alert(error);
@@ -44,7 +44,7 @@ async function submitFormRegister(event) {
   let passwordr = document.getElementById("passwordr").value;
 
   if (password !== passwordr) {
-    alert("Password are not matching");
+    alert("Parolele nu se potrivesc");
     return;
   }
   let username = document.getElementById("username").value;

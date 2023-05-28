@@ -32,14 +32,14 @@ $dataTopics = json_decode(file_get_contents($urlTopics, true));
               <h5><span style="font-weight: 600;">Email:</span> <?= $dataUser->mail ?></h5>
             </div>
             <div class="p-1">
-              <h5><span style="font-weight: 600;">Numar telefon:</span> <?= $dataUser->tel ?></h5>
+              <h5><span style="font-weight: 600;">Număr telefon:</span> <?= $dataUser->tel ?></h5>
             </div>
             <div class="d-flex flex-row ">
               <?php foreach ($dataTopics as $key => $value) : ?>
                 <div class="container-topics-main ">
                   <div class="container-topic h-100">
                     <div style="height:75px"><span> <?= $value->name ?></span></div>
-                    <div class="mt-1 "><span><a class='btn btn-success' href="./pagina-voturi.php?id=<?= $value->id ?>" class="vote">Voteaza</a></span></div>
+                    <div class="mt-1 "><span><a class='btn btn-success' href="./pagina-voturi.php?id=<?= $value->id ?>" class="vote">Votează</a></span></div>
                   </div>
                 </div>
               <?php endforeach; ?>

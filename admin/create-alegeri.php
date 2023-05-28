@@ -8,7 +8,7 @@
         <div class="card text-black" style="border-radius: 25px;">
 
           <div class="container mt-5">
-            <a href="./view.php"><button type="button" class="btn btn-primary btn-block">Inapoi</button></a>
+            <a href="./view.php"><button type="button" class="btn btn-primary btn-block">Înapoi</button></a>
 
           </div>
           <div class="container mt-3 mb-5">

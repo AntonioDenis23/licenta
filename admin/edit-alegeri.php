@@ -21,7 +21,7 @@ foreach ($alegeri as $alegere) {
         <div class="card text-black" style="border-radius: 25px;">
 
           <div class="container mt-5">
-            <a href="./view.php"><button type="button" class="btn btn-primary btn-block">Inapoi</button></a>
+            <a href="./view.php"><button type="button" class="btn btn-primary btn-block">Înapoi</button></a>
           </div>
           <div class="container mt-3 mb-5">
             <form method="post" id="add_create" name="add_create" onsubmit="submitFormAddAlegere(event,<?= $_GET['id'] ?>)">

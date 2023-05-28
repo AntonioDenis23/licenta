@@ -12,7 +12,7 @@
             <!-- Password input -->
             <div class="form-outline mb-4">
                 <input type="password" id="form2Example2" class="form-control" />
-                <label class="form-label" for="form2Example2" value="">Parola</label>
+                <label class="form-label" for="form2Example2" value="">Parolă</label>
             </div>
 
             <!-- Submit button -->

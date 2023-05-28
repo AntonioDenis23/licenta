@@ -1,6 +1,6 @@
 <div class="container mt-4">
    <div class="d-flex justify-content-end">
-      <a href="<?php echo './create-alegeri.php' ?>" class="btn btn-success buton-absolut">Adauga Alegere</a>
+      <a href="<?php echo './create-alegeri.php' ?>" class="btn btn-success buton-absolut">Adaugă Alegere</a>
    </div>
 
    <div class="mt-3">
@@ -12,7 +12,7 @@
             <tr>
                <th>Id</th>
                <th>Nume Alegere:</th>
-               <th>Actiune</th>
+               <th>Acțiune</th>
             </tr>
          </thead>
          <tbody>
@@ -23,7 +23,7 @@
                      <td><?php echo $alegere->name; ?></td>
                      <td>
                         <a href="<?= './edit-alegeri.php?id=' . $alegere->id ?>" class="btn btn-primary btn-sm">Editeaza</a>
-                        <button type='button' onclick='confirmFunctionAlegeri(<?= $alegere->id ?>)' class="btn btn-danger btn-sm">Sterge</button>
+                        <button type='button' onclick='confirmFunctionAlegeri(<?= $alegere->id ?>)' class="btn btn-danger btn-sm">Șterge</button>
                      </td>
                   </tr>
                <?php endforeach; ?>
@@ -35,7 +35,7 @@
 
 <script>
    async function confirmFunctionAlegeri(id) {
-      if (confirm("Esti sigur ca vrei sa stergi?")) {
+      if (confirm("Ștergere?")) {
          let resonse = await fetch(`http://localhost:5050/deleteElection?electionId=${id}`, {
             method: "POST",
             headers: {

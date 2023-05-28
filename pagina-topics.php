@@ -1,4 +1,4 @@
-<?php include_once('header.php');?>
+<?php include_once('header.php'); ?>
 <div style="height:200px"></div>
 <div class="container">
 	<div class="row">
@@ -22,7 +22,7 @@
 			)
 		);
 
-        foreach ($people as $key => $person) {
+		foreach ($people as $key => $person) {
 			echo '<div class="col-lg-4 col-md-6 col-sm-12 mb-3">
 				<div class="card">
 					<div class="card-body">
@@ -39,9 +39,9 @@
 			</div>';
 		}
 		?>
-        <div>
-            <button type="button" class="btn btn-primary m-auto d-block">Voteaza</button>
-        </div>
+		<div>
+			<button type="button" class="btn btn-primary m-auto d-block">Votează</button>
+		</div>
 	</div>
 </div>
 
@@ -49,4 +49,4 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
-<?php include_once('footer.php');?>
+<?php include_once('footer.php'); ?>

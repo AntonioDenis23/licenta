@@ -5,7 +5,7 @@
             <div class="col-lg-12 col-xl-11">
                 <div class="card text-black" style="border-radius: 25px;">
                     <div class="container my-5">
-                        <h1>Termeni si conditii</h1>
+                        <h1>Termeni și condiții</h1>
                     </div>
                 </div>
             </div>

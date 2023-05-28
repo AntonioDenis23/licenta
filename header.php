@@ -32,7 +32,7 @@ if (isset($_SESSION['id'])) {
                 <li class="nav-item">
                     <a class="nav-link" href="../about.php">Despre</a>
                 </li>
-                <li> <a class="nav-link" href="./termenii.php">Termenii si conditiile</a> </li>
+                <li> <a class="nav-link" href="../termenii.php">Termeni și condiții</a> </li>
             </ul>
         <?php else : ?>
             <img src="./poze/logo.png" alt="" height="50px" class="logo-image">
@@ -40,7 +40,7 @@ if (isset($_SESSION['id'])) {
                 <li class="nav-item">
                     <a class="nav-link" href="./about.php">Despre</a>
                 </li>
-                <li> <a class="nav-link" href="./termenii.php">Termeni si conditii</a> </li>
+                <li> <a class="nav-link" href="./termenii.php">Termeni și condiții</a> </li>
 
             </ul>
         <?php endif ?>
@@ -50,7 +50,7 @@ if (isset($_SESSION['id'])) {
             echo "<div id='navbarNav'>
                 <ul class='navbar-nav' >
                     <li class='nav-item'>
-                        <a class='nav-link' href='register.php'>Inregistrare</a>
+                        <a class='nav-link' href='register.php'>Înregistrare</a>
                     </li>
                     <li class='nav-item'>
                         <a class='nav-link' href='index.php'>Logare</a>
@@ -61,7 +61,7 @@ if (isset($_SESSION['id'])) {
             echo "<div id='navbarNav'>
                         <ul  class='navbar-nav' >
                             <li class='nav-item'>
-                                <a class='nav-link' href='../pagina-cont-utilizator.php?username=" . $_COOKIE['username']  . "'>Pagina utilizator</a>
+                                <a class='nav-link' href='../pagina-cont-utilizator.php?username=" . $_COOKIE['username']  . "'>Pagină utilizator</a>
                             </li>
                             <li class='nav-item'>
                                 <a class='nav-link' href='../logout.php'>Delogare</a>
@@ -73,7 +73,7 @@ if (isset($_SESSION['id'])) {
                     <div id='navbarNav'>
                         <ul  class='navbar-nav' >
                             <li class='nav-item'>
-                                <a class='nav-link' href='./pagina-cont-utilizator.php?username=" . $_COOKIE['username']  . "'>Pagina utilizator</a>
+                                <a class='nav-link' href='./pagina-cont-utilizator.php?username=" . $_COOKIE['username']  . "'>Pagină utilizator</a>
                             </li>
                             <li class='nav-item'>
                                 <a class='nav-link' href='logout.php'>Delogare</a>

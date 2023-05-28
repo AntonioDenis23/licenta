@@ -16,7 +16,7 @@ $candidate = json_decode(file_get_contents($candidateUrl, true));
       <div class="col-lg-12 col-xl-11">
         <div class="card text-black" style="border-radius: 25px;">
           <div class="container mt-5">
-            <a href="./view.php"><button type="button" class="btn btn-primary btn-block">Inapoi</button></a>
+            <a href="./view.php"><button type="button" class="btn btn-primary btn-block">Înapoi</button></a>
 
           </div>
           <div class="container mt-3 mb-5">
@@ -45,7 +45,7 @@ $candidate = json_decode(file_get_contents($candidateUrl, true));
                 <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Mircea" value="<?= $candidate->lastName; ?>">
               </div>
               <div class="form-group">
-                <label>Ocupatie:</label>
+                <label>Ocupație:</label>
                 <input type="text" id="job" name="job" class="form-control" placeholder="Zugrav" value="<?= $candidate->job; ?>">
               </div>
               <div class="form-group">
